@@ -1,0 +1,26 @@
+Info: The app uses H2 for persistence and localhost:8080 for API service
+---------------------------
+Please follow below steps to tests:
+
+1. To create a test data
+Uncomment the method in AppController @PostMapping("/users/testDataInsert") public void test()
+
+2. Send the post request to "localhost:8080/users/testDataInsert"
+
+3. Below API's has been created to test the requests.
+
+GET	/users/{userName}/postsreverseorder  : all posts of the user User sorted by lastUpdatedDate
+example: http://localhost:8080/users/s1/postsreverseorder
+	
+POST /users/{userName}/posts :  Create a Post
+example: localhost:8080/users/s2/posts
+	
+POST  /users/{userFollowing}/follow/{usertoFollow}  : Follow a user 
+example: localhost:8080/s1/follow/s2
+	
+GET	/users/{userName}/timeline : all posts of the user User + the followers(the ones that user follows posts sorted by lastUpdatedDate
+example http://localhost:8080/users/s1/timeline
+	
+	
+	
+	_______________________________________
